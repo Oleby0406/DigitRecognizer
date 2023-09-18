@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Digit Recognizer</title>
+    <link rel = "stylesheet" href="{{url_for('static', filename='style.css')}}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+<body>
+    <script src="{{url_for('static', filename='canvas.js')}}"></script>
+    <div class="main">
+        <h1>Digit Recognizer</h1>
+        <a href="#">Github</a>
+        <p>Single digit recognizer made with Flask and the Python Keras library 
+            trained on the MNIST digit dataset using a CNN model.</p>
+        <h3>Tips for best recognition:</h3>
+        <ul>
+            <li>Write the digit as large as possible</li>
+            <li>Keep the digit as centered as possible</li>
+            <li>Avoid drawing anything but the single digit</li>
+        </ul>
+        <h3>Known limitations:</h3>
+        <ul>
+            <li>Cannot recognize multiple digits at a time</li>
+            <li>Sideways or upsidedown digits are unlikely to be recognized</li>
+        </ul>
+        <div class="recognition">
+            <canvas id="canvas" height="280" width="280"></canvas>
+            <h1 id="result"></h1>
+            <div>
+                <button id="clear">Clear</button>
+                <button id="recognize">Recognize</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

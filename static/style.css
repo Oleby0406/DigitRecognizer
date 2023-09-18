@@ -1,0 +1,48 @@
+ul {
+    display: inline-block;
+    text-align: left;
+    width: 50%;
+}
+
+h1, h3, p, li {
+    color: #0010a4;
+}
+
+button {
+    background-color: #0010a4;
+    color: white;
+}
+
+h3 {
+    margin-bottom: 0px;
+}
+
+a {
+    font-size: 20px;
+    color: #004ecc;
+}
+
+body {
+    background-color: #f5f5dc;
+}
+
+#canvas {
+    border: solid;
+    margin-top: 1em;
+}
+
+#clear, #recognize {
+    margin-bottom: 1em;
+}
+
+.main {
+    text-align: center;
+    margin: auto;
+    width: 50%;
+}
+
+.recognition {
+    margin: auto;
+    border: solid;
+}
+
