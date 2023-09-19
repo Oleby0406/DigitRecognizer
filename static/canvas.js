@@ -48,10 +48,13 @@ window.onload = function () {
         $.ajax({
             url: '/recognize',
             type: 'POST',
-            data: {"img": image},
+            data: {img: image},
             success: function(response) {
                 console.log(response);
                 document.getElementById("result").innerHTML = response;
+            },
+            error: function(response) {
+                console.log(response);
             }
         })
     });

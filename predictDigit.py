@@ -1,6 +1,5 @@
 from numpy import argmax
-from keras.preprocessing.image import load_img
-from keras.preprocessing.image import img_to_array
+from keras.utils import load_img, img_to_array
 from keras.models import load_model
 from flask import Flask, render_template, request
 from base64 import b64decode
@@ -24,8 +23,8 @@ def load_image(filename):
 @app.route('/recognize', methods=['GET', 'POST'])
 def identify():
     if request.method == 'POST':
-        imageData = request.form['img']
-        tempImg = Image.open(BytesIO(b64decode(imageData.split(',')[1])))
+        img = request.form["img"]
+        tempImg = Image.open(BytesIO(b64decode(img.split(',')[1])))
         tempImg.save("canvas.png")
         img = load_image("canvas.png")
         model = load_model('final_model')
@@ -36,4 +35,4 @@ def identify():
     return "Guess: " + str(guess) + ", " + str(round(confidence * 100, 2)) + "%"
 
 if __name__ == "__main__":
-    app.run()
+    app.run(debug = True)
