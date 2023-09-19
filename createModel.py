@@ -40,7 +40,7 @@ def run_test_harness():
 	trainX, trainY, testX, testY = load_dataset()
 	trainX, testX = prep_pixels(trainX, testX)
 	model = define_model()
-	model.fit(trainX, trainY, epochs=20, batch_size=32, verbose=1)
+	model.fit(trainX, trainY, epochs=10, batch_size=32, verbose=1)
 	model.save('final_model')
 
 run_test_harness()

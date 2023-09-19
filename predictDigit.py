@@ -23,8 +23,8 @@ def load_image(filename):
 @app.route('/recognize', methods=['GET', 'POST'])
 def identify():
     if request.method == 'POST':
-        img = request.form["img"]
-        tempImg = Image.open(BytesIO(b64decode(img.split(',')[1])))
+        imgData = request.form["img"]
+        tempImg = Image.open(BytesIO(b64decode(imgData.split(',')[1])))
         tempImg.save("canvas.png")
         img = load_image("canvas.png")
         model = load_model('final_model')
