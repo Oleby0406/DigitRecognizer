@@ -7,7 +7,6 @@ from io import BytesIO
 from PIL import Image
 
 app = Flask(__name__)
-model = load_model('final_model')
 
 @app.route("/")
 def index():
@@ -28,6 +27,7 @@ def identify():
         tempImg = Image.open(BytesIO(b64decode(imgData.split(',')[1])))
         tempImg.save("canvas.png")
         img = load_image("canvas.png")
+        model = load_model('final_model')
         prediction = model.predict(img)[0]
         confidence = max(prediction)
         guess = argmax(prediction)
