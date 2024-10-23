@@ -9,7 +9,7 @@ window.onload = function () {
     context.strokeStyle = '#FFFFFF';
     context.lineWidth = 10;
     context.lineCap = 'round';
-    context.lineJoin = 'round'
+    context.lineJoin = 'round';
 
     canvas.onmousedown = startDrawing;
     canvas.onmouseup = stopDrawing;
